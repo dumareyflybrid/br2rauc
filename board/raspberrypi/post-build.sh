@@ -26,6 +26,10 @@ if [ -e ${TARGET_DIR}/etc/fstab ]; then
 	# For bulk data (eg: firmware updates)
 	grep -qE 'LABEL=Upload' ${TARGET_DIR}/etc/fstab || \
 	echo "LABEL=Upload /upload ext4 defaults,noatime 0 0" >> ${TARGET_DIR}/etc/fstab
+
+	# For env data (eg: rauc flags to bootloader)
+	grep -qE '/dev/sda1' ${TARGET_DIR}/etc/fstab || \
+	echo "/dev/sda1 /uboot auto defaults,noatime 0 0" >> ${TARGET_DIR}/etc/fstab
 fi
 
 # Copy custom cmdline.txt file

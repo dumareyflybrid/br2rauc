@@ -95,7 +95,7 @@ dtoverlay=miniuart-bt
 # Requires fairly recent RPi Firmware:
 # https://github.com/raspberrypi/firmware/issues/1651
 # Comment this line if you expect to be able to use the U-Boot command prompt!
-dtparam=watchdog
+#dtparam=watchdog
 
 # GPIO 4 has a pull-up enabled at reset, but let's set it explicitly just to be sure
 gpio=4=ip,pu
